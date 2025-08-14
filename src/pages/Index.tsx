@@ -4,7 +4,9 @@ import QuoteSection from '@/components/QuoteSection';
 import StatsSection from '@/components/StatsSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
+import HowNikahWorksSection from '@/components/HowNikahWorksSection';
 import NewsletterSection from '@/components/NewsletterSection';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
@@ -15,7 +17,9 @@ const Index = () => {
       <StatsSection />
       <FeaturesSection />
       <HowItWorksSection />
+      <HowNikahWorksSection />
       <NewsletterSection />
+      <Footer />
     </div>
   );
 };
