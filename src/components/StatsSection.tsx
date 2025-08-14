@@ -1,30 +1,33 @@
-import { Users, Heart, CheckCircle, Globe } from 'lucide-react';
+import coupleIcon from '@/assets/couple-icon.png';
+import groomIcon from '@/assets/groom-icon.png';
+import brideIcon from '@/assets/bride-icon.png';
+import successIcon from '@/assets/success-icon.png';
 
 const StatsSection = () => {
   const stats = [
     {
-      icon: Users,
+      icon: coupleIcon,
       number: "4,512",
-      label: "Active Users",
+      label: "Total groom & bride's biodatas",
+      description: "Active Users"
+    },
+    {
+      icon: groomIcon,
+      number: "1,881",
+      label: "Total groom's biodatas",
       description: "Verified Profiles"
     },
     {
-      icon: Heart,
-      number: "1,881",
-      label: "Success Stories",
-      description: "Happy Marriages"
-    },
-    {
-      icon: CheckCircle,
+      icon: brideIcon,
       number: "2,629",
-      label: "Verified Profiles",
+      label: "Total bride's biodatas",
       description: "Background Checked"
     },
     {
-      icon: Globe,
-      number: "190+",
-      label: "Countries",
-      description: "Global Reach"
+      icon: successIcon,
+      number: "1,190+",
+      label: "Total Successful Nikah",
+      description: "Happy Marriages"
     }
   ];
 
@@ -42,7 +45,6 @@ const StatsSection = () => {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, index) => {
-            const Icon = stat.icon;
             return (
               <div 
                 key={index}
@@ -50,8 +52,8 @@ const StatsSection = () => {
               >
                 {/* Icon Container */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-glow transition-all duration-300">
-                    <Icon className="w-8 h-8 text-white" />
+                  <div className="w-20 h-20 mx-auto bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-glow transition-all duration-300 border border-primary/20">
+                    <img src={stat.icon} alt={stat.label} className="w-12 h-12 object-contain" />
                   </div>
                   {/* Decorative Elements */}
                   <div className="absolute -top-1 -right-1 w-4 h-4 bg-gold rounded-full animate-pulse"></div>
@@ -59,17 +61,17 @@ const StatsSection = () => {
                 </div>
 
                 {/* Number */}
-                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
+                <div className="text-2xl md:text-3xl font-bold text-gradient mb-2">
                   {stat.number}
                 </div>
 
                 {/* Label */}
-                <div className="text-lg font-semibold text-foreground mb-1">
+                <div className="text-sm md:text-base font-semibold text-foreground mb-1">
                   {stat.label}
                 </div>
 
                 {/* Description */}
-                <div className="text-sm text-muted-foreground">
+                <div className="text-xs md:text-sm text-muted-foreground">
                   {stat.description}
                 </div>
               </div>

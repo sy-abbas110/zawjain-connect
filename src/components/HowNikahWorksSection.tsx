@@ -73,58 +73,85 @@ const HowNikahWorksSection = () => {
 
         {/* Main Content Area */}
         <div className="relative max-w-6xl mx-auto">
-          {/* Central Illustration Container */}
-          <div className="relative min-h-[600px] flex items-center justify-center">
-            
-            {/* Steps positioned around the illustration */}
+          {/* Mobile View - Stack vertically */}
+          <div className="lg:hidden space-y-8">
             {steps.map((step, index) => {
               const Icon = step.icon;
               return (
-                <div key={index} className={getStepClasses(step.position)}>
-                  {/* Badge */}
-                  <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold mb-3 ${getBadgeClasses(step.color)}`}>
-                    {step.badge}
+                <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-primary/10">
+                  <div className="flex items-start gap-4">
+                    <div className={`flex-shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-full text-sm font-bold ${getBadgeClasses(step.color)}`}>
+                      {step.badge}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-foreground mb-2 flex items-center gap-2">
+                        <Icon className="w-5 h-5 text-primary" />
+                        {step.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed text-sm">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
-                  
-                  {/* Content */}
-                  <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-2">
-                    <Icon className="w-5 h-5 text-primary" />
-                    {step.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed text-sm">
-                    {step.description}
-                  </p>
                 </div>
               );
             })}
+          </div>
 
-            {/* Central Illustration */}
-            <div className="relative z-10">
-              <div className="w-80 h-80 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center relative overflow-hidden">
-                {/* Decorative elements */}
-                <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 to-green-100/50 rounded-full"></div>
-                
-                {/* Couple illustration */}
-                <div className="relative z-10 flex items-end justify-center pb-8">
-                  <img 
-                    src={coupleIllustration} 
-                    alt="Islamic couple illustration" 
-                    className="w-64 h-64 object-contain filter drop-shadow-lg"
-                  />
-                </div>
+          {/* Desktop View - Positioned around illustration */}
+          <div className="hidden lg:block">
+            <div className="relative min-h-[600px] flex items-center justify-center">
+              
+              {/* Steps positioned around the illustration */}
+              {steps.map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <div key={index} className={getStepClasses(step.position)}>
+                    {/* Badge */}
+                    <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold mb-3 ${getBadgeClasses(step.color)}`}>
+                      {step.badge}
+                    </div>
+                    
+                    {/* Content */}
+                    <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-2">
+                      <Icon className="w-5 h-5 text-primary" />
+                      {step.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm">
+                      {step.description}
+                    </p>
+                  </div>
+                );
+              })}
 
-                {/* Floating hearts and decorative elements */}
-                <div className="absolute top-12 left-16 w-3 h-3 bg-pink-300 rounded-full opacity-60 animate-pulse"></div>
-                <div className="absolute top-20 right-20 w-2 h-2 bg-green-300 rounded-full opacity-50 animate-pulse delay-300"></div>
-                <div className="absolute bottom-16 left-12 w-2 h-2 bg-purple-300 rounded-full opacity-40 animate-pulse delay-700"></div>
-                <div className="absolute bottom-20 right-16 w-3 h-3 bg-pink-200 rounded-full opacity-50 animate-pulse delay-500"></div>
-                
-                {/* Small decorative plants/leaves */}
-                <div className="absolute bottom-8 left-8 text-green-400 opacity-60">
-                  🌿
-                </div>
-                <div className="absolute bottom-12 right-12 text-green-400 opacity-60">
-                  🌿
+              {/* Central Illustration */}
+              <div className="relative z-10">
+                <div className="w-80 h-80 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center relative overflow-hidden">
+                  {/* Decorative elements */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 to-green-100/50 rounded-full"></div>
+                  
+                  {/* Couple illustration */}
+                  <div className="relative z-10 flex items-end justify-center pb-8">
+                    <img 
+                      src={coupleIllustration} 
+                      alt="Islamic couple illustration" 
+                      className="w-64 h-64 object-contain filter drop-shadow-lg"
+                    />
+                  </div>
+
+                  {/* Floating hearts and decorative elements */}
+                  <div className="absolute top-12 left-16 w-3 h-3 bg-pink-300 rounded-full opacity-60 animate-pulse"></div>
+                  <div className="absolute top-20 right-20 w-2 h-2 bg-green-300 rounded-full opacity-50 animate-pulse delay-300"></div>
+                  <div className="absolute bottom-16 left-12 w-2 h-2 bg-purple-300 rounded-full opacity-40 animate-pulse delay-700"></div>
+                  <div className="absolute bottom-20 right-16 w-3 h-3 bg-pink-200 rounded-full opacity-50 animate-pulse delay-500"></div>
+                  
+                  {/* Small decorative plants/leaves */}
+                  <div className="absolute bottom-8 left-8 text-green-400 opacity-60">
+                    🌿
+                  </div>
+                  <div className="absolute bottom-12 right-12 text-green-400 opacity-60">
+                    🌿
+                  </div>
                 </div>
               </div>
             </div>
@@ -138,9 +165,9 @@ const HowNikahWorksSection = () => {
             <p className="text-muted-foreground max-w-md">
               Join thousands of Muslims who have found meaningful relationships through our platform
             </p>
-            <button className="btn-hero mt-4 group">
+            <button className="btn-hero mt-4 group flex items-center gap-2">
               Start Your Journey
-              <Heart className="w-5 h-5 ml-2 group-hover:text-red-300 transition-colors duration-300" />
+              <Heart className="w-5 h-5 group-hover:text-red-300 transition-colors duration-300" />
             </button>
           </div>
         </div>

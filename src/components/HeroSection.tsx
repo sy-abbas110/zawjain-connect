@@ -40,8 +40,8 @@ const HeroSection = () => {
           </p>
 
           {/* Search Form */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-2xl max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 md:p-8 shadow-2xl max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-6">
               {/* Looking For */}
               <div className="space-y-2">
                 <label className="text-sm font-medium text-foreground block text-left">
